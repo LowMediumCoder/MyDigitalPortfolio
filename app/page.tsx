@@ -1,5 +1,4 @@
 // app/page.tsx
-import Image from 'next/image'
 import Link from 'next/link'
 import { getFeaturedProjects } from '@/data/projects'
 
@@ -29,15 +28,8 @@ export default async function Home() {
           </div>
         </div>
         <div className="md:w-1/2 flex justify-center">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-600">
-            {/* Replace with your own image */}
-            <Image 
-              src="/profile-placeholder.jpg" 
-              alt="August Languepin" 
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-600 bg-gray-300 flex items-center justify-center">
+            <i className="fas fa-user-circle text-8xl text-gray-500"></i>
           </div>
         </div>
       </section>

@@ -1,5 +1,4 @@
 // app/about/page.tsx
-import Image from 'next/image'
 
 export default function AboutPage() {
   return (
@@ -10,31 +9,28 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row gap-8 mb-12">
           <div className="md:w-1/3">
             <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg">
-              <Image 
-                src="/profile-placeholder.jpg" 
-                alt="Your Name" 
-                fill
-                style={{ objectFit: "cover" }}
-                priority
-              />
+              <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+                <i className="fas fa-user-circle text-7xl text-gray-500"></i>
+              </div>
             </div>
           </div>
           
           <div className="md:w-2/3">
             <h2 className="text-2xl font-bold mb-4">August Languepin</h2>
-            <h3 className="text-xl text-white-700 mb-4">Front-end Developer</h3>
+            <h3 className="text-xl text-white-700 mb-4">Front-End Developer</h3>
             <p className="text-lg text-white-600 mb-6">
               I'm a passionate front-end developer with a strong focus on creating intuitive 
               and responsive user interfaces. With 3+ years of experience building web applications, 
               I bring creativity and technical expertise to every project.
             </p>
             <p className="text-lg text-white-600 mb-6">
-              My journey in web development began during my Computer Science studies, where I 
-              discovered my passion for bridging the gap between users and technology through 
-              thoughtful design and clean code.
+              My journey in web development began during my high school career, where I started teaching myself HTML and CSS.
+              I then went on to study Computing at Technological University of Dublin, where I further developed my skills in web development.
+              I started using Bootstrap CSS and JavaScript to create more interactive and responsive websites. Although I don't have any work experience at the moment, 
+              I am currently working on a few projects to build up my portfolio. I am still trying to work on my Javascript skills and learning new frameworks like Next.js.
             </p>
             <p className="text-lg text-white-600">
-              When I'm not coding, you can find me chilling with my mates online on Discord or watching Twitch streams.
+              When I'm not coding, you can find me chilling with my mates online on Discord or watching Twitch streams. Or maybe even playing some games.
             </p>
           </div>
         </div>
