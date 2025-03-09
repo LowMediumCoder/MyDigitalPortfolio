@@ -24,12 +24,12 @@ export default async function ProjectDetail({ params }: { params: { id: string }
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumb */}
-        <nav className="flex mb-6 text-gray-600 text-sm">
+        <nav className="flex mb-6 text-white-600 text-sm">
           <Link href="/" className="hover:text-blue-600">Home</Link>
           <span className="mx-2">/</span>
           <Link href="/projects" className="hover:text-blue-600">Projects</Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">{project.title}</span>
+          <span className="text-white-900">{project.title}</span>
         </nav>
         
         {/* Project Header */}

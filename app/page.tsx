@@ -33,7 +33,7 @@ export default async function Home() {
             {/* Replace with your own image */}
             <Image 
               src="/profile-placeholder.jpg" 
-              alt="Augsut Languepin" 
+              alt="August Languepin" 
               fill
               style={{ objectFit: "cover" }}
               priority
@@ -70,7 +70,7 @@ export default async function Home() {
           iconUrl: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
           color: "text-blue-600" 
         },
-        { name: "GitHub", icon: "fab fa-github", color: "text-black-600" },
+        { name: "GitHub", icon: "fab fa-github", color: "text-gray-800" },
           ].map((skill, index) => (
         <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
           <div className="mb-4 text-5xl">
