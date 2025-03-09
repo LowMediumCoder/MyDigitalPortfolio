@@ -20,7 +20,7 @@ export default function AboutPage() {
             <h3 className="text-xl text-white-700 mb-4">Front-End Developer</h3>
             <p className="text-lg text-white-600 mb-6">
               I'm a passionate front-end developer with a strong focus on creating intuitive 
-              and responsive user interfaces. With 3+ years of experience building web applications, 
+              and responsive user interfaces. With 5+ years of experience building web applications, 
               I bring creativity and technical expertise to every project.
             </p>
             <p className="text-lg text-white-600 mb-6">
