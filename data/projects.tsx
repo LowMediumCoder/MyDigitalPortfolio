@@ -52,14 +52,18 @@ export const projects: Project[] = [
       "Created a secure Stripe checkout flow with webhooks for payment confirmation",
     ],
     technologies: {
-      "Backend": ["Symfony PHP", "MySQL"],
-      "Deployment": ["GitHub"]
+      "Backend": ["Symfony PHP", "MySQL"]
     }
   },
   {
     id: 2,
     title: "BAP 3 Project - site d'accessibilité",
     description: "Site d'accèsibilité pour les personnes en situation de handicap",
+    longDescription: `
+      Ce site a été créé pour le projet BAP 3 de la formation de développeur web et web mobile.
+      Le site a été réalisé en HTML, CSS et JavaScript. Il est responsive et accessible.
+      Il a été réalisé en collaboration avec un groupe de 3 devs, 4 creative et design, 2 communication. 2 Chef de projet.
+    `,
     image: "/project-2.jpg",
     tags: ["HTML", "CSS", "Bootstrap CSS", "JavaScript"],
     demoUrl: "https://lowmediumcoder.github.io/site-accessibilite/global/pages/accueil.html",
