@@ -37,8 +37,6 @@ export const projects: Project[] = [
     `,
     image: "/project-1.jpg",
     tags: ["Symfony PHP", "MySQL",],
-    demoUrl: "#",
-    githubUrl: "#",
     featured: true,
     screenshots: [
       "/project-1-screenshot-1.jpg",
