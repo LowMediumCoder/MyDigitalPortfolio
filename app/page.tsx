@@ -21,7 +21,7 @@ export default async function Home() {
           </p>
           <div className="flex space-x-4">
             <Link href="/projects" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">
-              View My Work
+              View My Projects
             </Link>
             <Link href="/contact" className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition">
               Contact Me
@@ -33,7 +33,7 @@ export default async function Home() {
             {/* Replace with your own image */}
             <Image 
               src="/profile-placeholder.jpg" 
-              alt="Your Name" 
+              alt="Augsut Languepin" 
               fill
               style={{ objectFit: "cover" }}
               priority

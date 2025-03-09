@@ -57,7 +57,7 @@ export default function ContactPage() {
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Get In Touch</h1>
-        <p className="text-lg text-gray-600 mb-8">
+        <p className="text-lg text-white-600 mb-8">
           Have a question or want to work together? Fill out the form below, and I'll get back to you as soon as possible.
         </p>
         
@@ -65,17 +65,17 @@ export default function ContactPage() {
           <div className="md:col-span-1 space-y-6">
             <div>
               <h3 className="text-xl font-semibold mb-2">Contact Information</h3>
-              <p className="text-gray-600">Feel free to reach out through the form or via the contact details below.</p>
+              <p className="text-white-600">Feel free to reach out through the form or via the contact details below.</p>
             </div>
             
             <div>
               <h4 className="font-medium mb-1">Email</h4>
-              <p className="text-gray-600">your.email@example.com</p>
+              <p className="text-white-600">augustlanguepin2000@gmail.com</p>
             </div>
             
             <div>
               <h4 className="font-medium mb-1">Location</h4>
-              <p className="text-gray-600">City, Country</p>
+              <p className="text-white-600">France</p>
             </div>
             
             <div className="pt-4">
@@ -94,7 +94,7 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-white-700 mb-1">
                     Name
                   </label>
                   <input
@@ -109,7 +109,7 @@ export default function ContactPage() {
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-white-700 mb-1">
                     Email
                   </label>
                   <input
@@ -125,7 +125,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="subject" className="block text-sm font-medium text-white-700 mb-1">
                   Subject
                 </label>
                 <input
@@ -140,7 +140,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-white-700 mb-1">
                   Message
                 </label>
                 <textarea
