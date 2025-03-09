@@ -1,101 +1,143 @@
-import Image from "next/image";
+// app/page.tsx
+import Image from 'next/image'
+import Link from 'next/link'
+import { getFeaturedProjects } from '@/data/projects'
 
-export default function Home() {
+export default async function Home() {
+  const featuredProjects = await getFeaturedProjects();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="container mx-auto px-4 py-12">
+      {/* Hero Section */}
+      <section className="flex flex-col md:flex-row items-center justify-between py-12">
+        <div className="md:w-1/2 mb-8 md:mb-0">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Hi, I'm <span className="text-blue-600">August Languepin</span>
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white-700">
+            Front-end Developer
+          </h2>
+          <p className="text-lg text-white-600 mb-6">
+            I create responsive, user-friendly web experiences with clean, efficient code.
+          </p>
+          <div className="flex space-x-4">
+            <Link href="/projects" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">
+              View My Work
+            </Link>
+            <Link href="/contact" className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition">
+              Contact Me
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div className="md:w-1/2 flex justify-center">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-600">
+            {/* Replace with your own image */}
+            <Image 
+              src="/profile-placeholder.jpg" 
+              alt="Your Name" 
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Skills Section */}
+      <section className="py-12">
+        <h2 className="text-3xl font-bold mb-8 text-center">Skills & Technologies</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+        { name: "HTML5", icon: "fab fa-html5", color: "text-orange-600" },
+        { name: "CSS3", icon: "fab fa-css3-alt", color: "text-blue-600" },
+        { 
+          name: "Tailwind CSS", 
+          customIcon: true, 
+          iconUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+          color: "text-blue-400" 
+        },
+        { name: "Bootstrap", icon: "fab fa-bootstrap", color: "text-purple-600" },
+        { name: "JavaScript", icon: "fab fa-js", color: "text-yellow-500" },
+        { 
+          name: "Symfony PHP", 
+          customIcon: true, 
+          iconUrl: "https://symfony.com/logos/symfony_black_03.svg",
+          color: "text-black" 
+        },
+        { name: "Next.js", icon: "fab fa-js-square", color: "text-black" },
+        { 
+          name: "TypeScript", 
+          customIcon: true, 
+          iconUrl: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+          color: "text-blue-600" 
+        },
+        { name: "GitHub", icon: "fab fa-github", color: "text-black-600" },
+          ].map((skill, index) => (
+        <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+          <div className="mb-4 text-5xl">
+            {skill.customIcon ? (
+          <img 
+            src={skill.iconUrl} 
+            alt={skill.name}
+            className="h-12 w-12"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            ) : (
+          <i className={`${skill.icon} ${skill.color}`}></i>
+            )}
+          </div>
+          <h3 className="font-medium text-gray-900">{skill.name}</h3>
+        </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Projects Preview */}
+      <section className="py-12">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bold">Featured Projects</h2>
+          <Link href="/projects" className="text-blue-600 hover:underline">
+            View All
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Project Cards */}
+          {featuredProjects.map((project) => (
+            <div key={project.id} className="bg-white rounded-lg overflow-hidden shadow-md transition hover:shadow-lg border border-gray-200 p-6">
+              <h3 className="text-xl font-bold mb-2 text-blue-700">{project.title}</h3>
+              <p className="text-gray-800 mb-4">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                  <span key={tagIndex} className="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">{tag}</span>
+                ))}
+                {project.tags.length > 3 && (
+                  <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">+{project.tags.length - 3}</span>
+                )}
+              </div>
+              <div className="flex justify-between">
+                <Link 
+                  href={`/projects/${project.id}`} 
+                  className="text-blue-600 font-medium hover:underline"
+                >
+                  View Details
+                </Link>
+                <div className="space-x-3">
+                  {project.demoUrl && (
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
+                      <i className="fas fa-external-link-alt"></i>
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
+                      <i className="fab fa-github"></i>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
-  );
+  )
 }
